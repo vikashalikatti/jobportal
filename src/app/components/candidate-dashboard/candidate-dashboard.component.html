@@ -1,0 +1,42 @@
+<div class="container mt-5">
+    <h2>Candidate Dashboard</h2>
+    <h3>Available Jobs</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Requirements</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let job of availableJobs">
+          <td>{{ job.title }}</td>
+          <td>{{ job.description }}</td>
+          <td>{{ job.requirements }}</td>
+          <td>
+            <button class="btn btn-primary" (click)="applyForJob(job.id)">Apply</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Applied Jobs</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Requirements</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let job of appliedJobs">
+          <td>{{ job.title }}</td>
+          <td>{{ job.description }}</td>
+          <td>{{ job.requirements }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

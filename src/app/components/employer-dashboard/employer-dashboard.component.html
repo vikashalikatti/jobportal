@@ -1,0 +1,32 @@
+<div class="container mt-5">
+    <h2>Employer Dashboard</h2>
+    <h3>Post a Job</h3>
+    <form [formGroup]="postJobForm" (ngSubmit)="onSubmit()">
+      <!-- Job posting form fields go here -->
+      <button type="submit" class="btn btn-primary" [disabled]="!postJobForm.valid">Post Job</button>
+    </form>
+    <h3>Jobs Posted</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Requirements</th>
+          <th>Candidates</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let job of postedJobs">
+          <td>{{ job.title }}</td>
+          <td>{{ job.description }}</td>
+          <td>{{ job.requirements }}</td>
+          <td>
+            <ul>
+              <li *ngFor="let candidate of job.candidates">{{ candidate.name }}</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
